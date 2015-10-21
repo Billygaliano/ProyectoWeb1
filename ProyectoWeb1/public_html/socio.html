@@ -21,6 +21,40 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <script>
+        function validar() {
+            var dni=document.getElementById('dni').value;
+            if(dni.length === 9){
+                
+                var numeroDNI = dni.substring(0,8);
+                var isInteger = function(n)  // Comprobar numero entero con expresiones regulares
+                {
+                    var intRegex = /^\d+$/;
+                    if(intRegex.test(n)) return true;
+                    return false;
+                };
+                if(!isInteger(numeroDNI))alert("no numeros");;
+
+
+                var letraDNI = dni.substring(8);
+                var get_letra = function(dni)
+                {
+                    var table = "TRWAGMYFPDXBNJZSQVHLCKE";
+                    return table.charAt(dni % 23);
+                };
+                var letra_obtenida = get_letra(numeroDNI);
+                if(letra_obtenida === letraDNI.toUpperCase()){
+                    return true;
+                }else{
+                    alert("no letra");
+                }
+
+            }else{
+                var d = document.getElementById("dni");    
+                document.setAttribute("aria-invalid",true);
+            }
+        }
+    </script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -157,8 +191,8 @@
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label>DNI (validar javas):</label>
-                            <input type="text" class="form-control" id="dni" required data-validation-required-message="Por favor, introduzca su DNI.">
+                            <label>DNI:</label>
+                            <input type="text" class="form-control" id="dni" onblur="validar()" required data-validation-required-message="Por favor, introduzca su DNI." >
                         </div>
                     </div>
                     <div class="control-group form-group">
@@ -182,7 +216,7 @@
                     <div id="success"></div>
                     <!-- For success/fail messages -->
                     <button type="submit" class="btn btn-primary">Enviar</button>
-                </form>
+                </form>               
             </div>
         </div>
         <!-- /.row -->
@@ -200,8 +234,11 @@
 
     </div>
     <!-- /.container -->
-
+    
+    <!-- main -->
+    <script src="js/main.js" type="text/javascript"></script>
     <!-- jQuery -->
+    
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
