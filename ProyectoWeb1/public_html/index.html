@@ -43,7 +43,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="img/logo_ronda.png" width="50" alt="Logo Ronda"/></a>
+                <a class="navbar-brand" href="index.html"><img src="img/logotipo_cabecera.png" width="300" alt="Logo Ronda"/></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -55,10 +55,10 @@
                         <a href="club.html">Club</a>
                     </li>
                     <li>
-                        <a href="contact.html">Hazte socio</a>
+                        <a href="socio.html">Hazte socio</a>
                     </li>
                     <li>
-                        <a href="portfolio-3-col.html">Calendario</a>
+                        <a href="calendario.html">Calendario</a>
                     </li>
                     <li>
                         <a href="noticias.html">Noticias</a>
@@ -93,22 +93,13 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <a href="about.html"><div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div></a>
-                <div class="carousel-caption">
-                    <h2>Caption 1</h2>
-                </div>
+                <a href="club.html"><div class="fill" style="background-image:url('img/slide/club.jpg');"></div></a>
             </div>
             <div class="item">
-                <a href="contact.html"><div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div></a>
-                <div class="carousel-caption">
-                    <h2>Caption 2</h2>
-                </div>
+                <a href="socio.html"><div class="fill" style="background-image:url('img/slide/socio.jpg');"></div></a>
             </div>
             <div class="item">
-                <a href="portfolio-3-col.html"><div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div></a>
-                <div class="carousel-caption">
-                    <h2>Caption 3</h2>
-                </div>
+                <a href="portfolio-3-col.html"><div class="fill" style="background-image:url('img/slide/calendario.jpg');"></div></a>
             </div>
         </div>
 
@@ -207,24 +198,55 @@
 
         <!-- Features Section -->
         <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Modern Business Features</h2>
+            <div class="col-lg-8">
+                <h2 class="page-header">Clasificación</h2>
             </div>
-            <div class="col-md-6">
-                <p>The Modern Business template by Start Bootstrap includes:</p>
-                <ul>
-                    <li><strong>Bootstrap v3.2.0</strong>
-                    </li>
-                    <li>jQuery v1.11.0</li>
-                    <li>Font Awesome v4.1.0</li>
-                    <li>Working PHP contact form with validation</li>
-                    <li>Unstyled page elements for easy customization</li>
-                    <li>17 HTML pages</li>
-                </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+            <div class="col-md-8">
+                <script type="text/javascript" src="http://www.resultados-futbol.com/scripts/api/api.php?tz=Europe/Ronda&format=json&req=tables&key=ba008af7f6b6c2e8699fc64a1d54cd01&league=3&group=1"></script>
+                
+                <table class="rankings  grated" width="100%" bgcolor="#FDFDFD" style="background:#FDFDFD;color:#0099CC;font-size:12px;border:1px solid #DDDDDD;border-spacing:5px;border-collapse:separate;" cellpadding="5">
+                    <thead>
+                        <tr>
+                            <th colspan="8" align="center"><a style="color:#006DA3;" href="http://www.resultados-futbol.com/tercera" target="_BLANK">Tercera División</a> <span style="color:#0099CC">|</span> <a style="color:#006DA3;" href="http://www.resultados-futbol.com/tercera" target="_BLANK" title="Tercera División, Jornada 9">Jornada 9</a>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="color:#87888A;">
+                            <td></td>
+                            <td align="left">Equipo</td>
+                            <td align="right">Pts</td>
+                            <td align="right">PG</td>
+                            <td align="right">PE</td>
+                            <td align="right">PP</td>
+                            <td align="right">GF</td>
+                            <td align="right">GC</td>
+                        </tr>
+                        <tr>
+                            <th>1</th>
+                            <td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/atletico-malagueno" title="At. Malagueño">Malagueño</a></td>
+                            <td align="right">21</td>
+                            <td align="right">6</td>
+                            <td align="right">3</td>
+                            <td align="right">0</td>
+                            <td align="right">24</td>
+                            <td align="right">9</td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/velez-club-de-futbol" title="Vélez CF">Vélez CF</a></td>
+                            <td align="right">21</td>
+                            <td align="right">6</td>
+                            <td align="right">3</td>
+                            <td align="right">0</td>
+                            <td align="right">19</td><td align="right">6</td></tr><tr><th>3</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/cd-el-ejido" title="CD El Ejido 2012">Ejido 2012</a></td><td align="right">19</td><td align="right">6</td><td align="right">1</td><td align="right">2</td><td align="right">20</td><td align="right">7</td></tr><tr><th>4</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/antequera" title="Antequera">Antequera</a></td><td align="right">18</td><td align="right">6</td><td align="right">0</td><td align="right">3</td><td align="right">16</td><td align="right">7</td></tr><tr><th>5</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/martos" title="Martos CD">Martos CD</a></td><td align="right">18</td><td align="right">6</td><td align="right">0</td><td align="right">3</td><td align="right">21</td><td align="right">13</td></tr><tr><th>6</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/loja" title="Loja">Loja</a></td><td align="right">17</td><td align="right">4</td><td align="right">5</td><td align="right">0</td><td align="right">12</td><td align="right">4</td></tr><tr><th>7</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/atletico-mancha-real" title="Mancha Real">Mancha Real</a></td><td align="right">17</td><td align="right">5</td><td align="right">2</td><td align="right">2</td><td align="right">16</td><td align="right">12</td></tr><tr><th>8</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/huetor-tajar" title="CD Huétor Tájar">Huétor</a></td><td align="right">14</td><td align="right">4</td><td align="right">2</td><td align="right">3</td><td align="right">23</td><td align="right">12</td></tr><tr><th>9</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/cd-rincon" title="CD Rincón">CD Rincón</a></td><td align="right">14</td><td align="right">4</td><td align="right">2</td><td align="right">3</td><td align="right">11</td><td align="right">13</td></tr><tr><th>10</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/palo" title="El Palo">El Palo</a></td><td align="right">13</td><td align="right">3</td><td align="right">4</td><td align="right">2</td><td align="right">9</td><td align="right">9</td></tr><tr><th>11</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/alhaurin-torre-cf" title="Alhaurín De La Torre CF">Alhaurín</a></td><td align="right">12</td><td align="right">3</td><td align="right">3</td><td align="right">3</td><td align="right">11</td><td align="right">9</td></tr><tr><th>12</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/guadix" title="Guadix">Guadix</a></td><td align="right">11</td><td align="right">3</td><td align="right">2</td><td align="right">3</td><td align="right">6</td><td align="right">4</td></tr><tr><th>13</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/los-villares-cf-senior" title="Los Villares CF">Villares</a></td><td align="right">10</td><td align="right">2</td><td align="right">4</td><td align="right">3</td><td align="right">11</td><td align="right">13</td></tr><tr><th>14</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/san-pedro" title="UD San Pedro">Pedro</a></td><td align="right">10</td><td align="right">3</td><td align="right">1</td><td align="right">5</td><td align="right">11</td><td align="right">17</td></tr><tr><th>15</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/ronda" title="CD Ronda">CD Ronda</a></td><td align="right">9</td><td align="right">3</td><td align="right">0</td><td align="right">5</td><td align="right">6</td><td align="right">19</td></tr><tr><th>16</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/comarca-marmol-senior" title="Comarca Del Marmol">Comarca</a></td><td align="right">8</td><td align="right">2</td><td align="right">2</td><td align="right">5</td><td align="right">4</td><td align="right">10</td></tr><tr><th>17</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/river-melilla" title="River Melilla">River</a></td><td align="right">7</td><td align="right">2</td><td align="right">1</td><td align="right">6</td><td align="right">11</td><td align="right">25</td></tr><tr><th>18</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/atarfe-industrial" title="Atarfe Industrial">Atarfe</a></td><td align="right">4</td><td align="right">1</td><td align="right">1</td><td align="right">7</td><td align="right">7</td><td align="right">22</td></tr><tr><th>19</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/maracena" title="Maracena">Maracena</a></td><td align="right">3</td><td align="right">0</td><td align="right">3</td><td align="right">6</td><td align="right">2</td><td align="right">13</td></tr><tr><th>20</th><td style="text-align:left;"><a style="color:#0099CC;" target="_blank" href="http://www.resultados-futbol.com/espanol-alquian" title="Español de Alquián">Español</a></td><td align="right">1</td><td align="right">0</td><td align="right">1</td><td align="right">8</td><td align="right">5</td><td align="right">21</td></tr></tbody></table>
             </div>
-            <div class="col-md-6">
-                <img class="img-responsive" src="http://placehold.it/700x450" alt="">
+            <div class="col-lg-4 col_top_align" style="margin-top: -102px">
+                <h2 class="page-header">Síguenos en Twitter</h2>
+            </div>
+            <div class="col-lg-4">
+                <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/CDRonda" data-widget-id="656760760673153024">Tweets por el @CDRonda.</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
             </div>
         </div>
         <!-- /.row -->
@@ -235,10 +257,10 @@
         <div class="well">
             <div class="row">
                 <div class="col-md-8">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+                    <p>Unidos por una pasión. ¡Qué grande es ser pequeño! Regala sentimiento, regala el abono del C.D. Ronda a quien más quieras... incluso a ti. </p>
                 </div>
                 <div class="col-md-4">
-                    <a class="btn btn-lg btn-default btn-block" href="#">Call to Action</a>
+                    <a class="btn btn-lg btn-default btn-block" href="socio.html">¡HAZTE SOCIO!</a>
                 </div>
             </div>
         </div>
@@ -248,8 +270,12 @@
         <!-- Footer -->
         <footer>
             <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                <div class="col-lg-11">
+                    <p>Copyright &copy; C.D Ronda 2015</p>
+                </div>
+                <div class="col-lg-1 font_icon" style="margin-top: -7px; font-size: 30px;">
+                    <a href="https://www.facebook.com/CD-Ronda-112109498853175/" target="_blank" rel="nofollow"><i class="fa fa-facebook-square"></i></a>
+                    <a href="https://twitter.com/CDRonda" target="_blank" rel="nofollow"><i class="fa fa-twitter-square"></i></a>
                 </div>
             </div>
         </footer>

@@ -5,6 +5,15 @@
    ========================================================================== */
 
 
+body{
+    padding-top: 75px; //antes a 50px
+    background-image: url("img/background-large.jpg"); //no estaba, fuente: http://www.djfc.co.uk/
+}
+
+header .carousel{
+    height: 80%; //antes a 50%
+}
+
 .navbar-brand {
   padding: 8px 15px;
 }
@@ -13,15 +22,10 @@
   height: 70px;
 }
 
+.col_top_align {
+  margin-top: -102px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+.font_icon {
+    font-size: 30px;
+}

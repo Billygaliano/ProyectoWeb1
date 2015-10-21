@@ -17,6 +17,8 @@ $(function() {
             var phone = $("input#phone").val();
             var email = $("input#email").val();
             var message = $("textarea#message").val();
+            var apellido = $("input#apellido").val();
+            var dni = $("input#dni").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
@@ -29,7 +31,9 @@ $(function() {
                     name: name,
                     phone: phone,
                     email: email,
-                    message: message
+                    message: message,
+                    apellido: apellido,
+                    dni: dni
                 },
                 cache: false,
                 success: function() {
@@ -38,7 +42,7 @@ $(function() {
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#success > .alert-success')
-                        .append("<strong>Your message has been sent. </strong>");
+                        .append("<strong>Mensaje enviado con éxito. </strong>");
                     $('#success > .alert-success')
                         .append('</div>');
 
@@ -50,7 +54,7 @@ $(function() {
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + " it seems that my mail server is not responding...</strong> Could you please email me directly to <a href='mailto:me@example.com?Subject=Message_Me from myprogrammingblog.com;>me@example.com</a> ? Sorry for the inconvenience!");
+                    $('#success > .alert-danger').append("<strong>Disculpe " + firstName + " el servidor de correo no responde...</strong> Puede enviar un correo a <a href='mailto:cdronda@gmail.com?Subject=Message_Me from myprogrammingblog.com;'>cdronda@gmail.com</a> Disculpe las molestias");
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
