@@ -29,3 +29,13 @@ header .carousel{
 .font_icon {
     font-size: 30px;
 }
+#logoApy{
+    width: 100px; 
+    float: left;
+}
+
+#logoCha{
+    width: 100px;
+    margin-left: 20px;
+    float: left;
+}

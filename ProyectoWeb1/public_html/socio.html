@@ -8,10 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    
     <title>Socio</title>
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
 
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -19,44 +20,8 @@
     <link href="css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <script>
-        function validar() {
-            var dni=document.getElementById('dni').value;
-            if(dni.length === 9){
-                
-                var numeroDNI = dni.substring(0,8);
-                var isInteger = function(n)  // Comprobar numero entero con expresiones regulares
-                {
-                    var intRegex = /^\d+$/;
-                    if(intRegex.test(n)) return true;
-                    return false;
-                };
-                if(!isInteger(numeroDNI))alert("no numeros");;
-
-
-                var letraDNI = dni.substring(8);
-                var get_letra = function(dni)
-                {
-                    var table = "TRWAGMYFPDXBNJZSQVHLCKE";
-                    return table.charAt(dni % 23);
-                };
-                var letra_obtenida = get_letra(numeroDNI);
-                if(letra_obtenida === letraDNI.toUpperCase()){
-                    return true;
-                }else{
-                    alert("no letra");
-                }
-
-            }else{
-                var d = document.getElementById("dni");    
-                document.setAttribute("aria-invalid",true);
-            }
-        }
-    </script>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+   <script src="js/jquery.js" type="text/javascript"></script>
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -179,20 +144,24 @@
                         <div class="controls">
                             <label>Nombre:</label>
                             <input type="text" class="form-control" id="name" required data-validation-required-message="Por favor, introduzca su nombre.">
-                            <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Apellidos:</label>
                             <input type="text" class="form-control" id="apellido" required data-validation-required-message="Por favor, introduzca sus apellidos.">
-                            <p class="help-block"></p>
-                        </div>
+                        </div> 
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>DNI:</label>
-                            <input type="text" class="form-control" id="dni" onblur="validar()" required data-validation-required-message="Por favor, introduzca su DNI." >
+                            <input type="text" class="form-control" id="dni" required data-validation-required-message="Por favor, introduzca su DNI." >
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>País:</label>
+                            <select name="pais" class="form-control" id="paises"></select>
                         </div>
                     </div>
                     <div class="control-group form-group">
@@ -227,27 +196,85 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Patrocinadores</p>
+                    <p>Patrocinadores:</p>
+                    <img id="logoApy" src="img/Logo-APYMER.png" alt="Logotipo Apymer"/> 
+                    <img id="logoCha" src="img/logo_charry.png" alt="Logo Charry"/>
+  
                 </div>
             </div>
         </footer>
 
     </div>
     <!-- /.container -->
-    
-    <!-- main -->
-    <script src="js/main.js" type="text/javascript"></script>
-    <!-- jQuery -->
-    
-    <script src="js/jquery.js"></script>
 
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    
+        <!-- main -->
+    <script src="js/main.js" type="text/javascript"></script>
 
     <!-- Contact Form JavaScript -->
     <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            
+        $(".help-block").each(function(i){
+           $(this).attr("id", "id"+i); 
+        });
+        
+        $("#dni").blur(function(){
+            var dni=$(this).val();
+            if(dni.length === 9){
+                
+                var numeroDNI = dni.substring(0,8);
+                var isInteger = function(n)  // Comprobar numero entero con expresiones regulares
+                {
+                    var intRegex = /^\d+$/;
+                    if(intRegex.test(n)) return true;
+                    return false;
+                };
+                if(!isInteger(numeroDNI))alert("no numeros");;
+
+
+                var letraDNI = dni.substring(8);
+                var get_letra = function(dni)
+                {
+                    var table = "TRWAGMYFPDXBNJZSQVHLCKE";
+                    return table.charAt(dni % 23);
+                };
+                var letra_obtenida = get_letra(numeroDNI);
+                if(letra_obtenida === letraDNI.toUpperCase()){
+                    return true;
+                }else{
+                    $("#contactForm").attr("class","has-error");
+                    $("#dni").attr("aria-invalid",true);
+                    $("#id2").append("<ul role='alert'> <li> DNI Erroneo.</li></ul>");
+                }
+
+            }else{
+               $("#contactForm").attr("class","has-error");
+               $("#dni").attr("aria-invalid",true);
+               $("#id2").append("<ul role='alert'> <li> DNI Incorrecto.</li></ul>");
+               
+            }
+        
+        }); 
+    });
+    </script>
+    
+    <script type="text/javascript">   
+            $.ajax({
+                url: 'ajax/pais.html',
+                success: function(data){
+                    $('#paises').html(data);
+                }});
+        </script>
+
 
 </body>
 
