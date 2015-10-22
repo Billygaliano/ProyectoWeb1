@@ -31,11 +31,15 @@ header .carousel{
 }
 #logoApy{
     width: 100px; 
-    float: left;
+    float: right;
+}
+
+#patro{
+    float: right;
 }
 
 #logoCha{
     width: 100px;
     margin-left: 20px;
-    float: left;
+    float: right;
 }
