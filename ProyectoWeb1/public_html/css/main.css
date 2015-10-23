@@ -48,7 +48,57 @@ header .carousel{
     margin-top: 9px;
 }
 
+.videoreciente{
+    float: left;
+    margin-right:180px;
+    
+}
 
+.comentario{
+    width:480px; 
+    float: left;
+}
+
+.comentario2{
+    width:480px;
+    float: right;
+}
+
+.addcomentariocss{
+    float: left;
+    width:480px;
+    padding-bottom: 1px;
+    margin-bottom: 3px; 
+    max-width: 480px;
+}
+
+.addcomentariocss2{
+    float: right;
+    width:480px;
+     padding-bottom: 1px;
+    margin-bottom: 3px;
+    max-width: 480px;
+}
+
+.estilo_imagen{
+    width: 350px;
+    height: 200px;
+    margin-left: 4px;
+    margin-top: 4px;
+    
+}
+
+.estilo_imagen2{
+    width: 600px;
+    height: 300px;  
+}
+
+.estilo_imagen3{
+     
+    width: 900px;
+    height: 400px;
+    margin: 0 auto;
+}
 
 .calendario p{
     margin-left: 5px;
