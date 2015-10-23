@@ -1,37 +1,53 @@
 {
    "plantilla":{
-       "presidente":{"nombre":"Francisco Harillo García"},
-       "entrenador":{"nombre":"Alessandro Pierini"},
-       "porteros":[
-           {"nick":"Barthez","nombre":"Ismael","apellidos":"Alba Molina","edad":"No disponible","nacionalidad":"España","imagen":"img/plantilla/no-disponible.jpg"},
-           {"nick":"Dani","nombre":"Daniel","apellidos":"Burgos Calderón","edad":"22 años","nacionalidad":"España","imagen":"http://thumb.resfu.com/img_data/players/small/237144.jpg?size=37x&amp;5"},
-           {"nick":"Álex Franco","nombre":"Alejandro","apellidos":"Franco Cordero","edad":"22 años","nacionalidad":"No disponible","imagen":"img/plantilla/no-disponible.jpg"},
-           {"nick":"Izquierdo","nombre":"Antonio","apellidos":"Izquierdo Sánchez","edad":"19 años","nacionalidad":"España","imagen":"http://thumb.resfu.com/img_data/players/medium/187013.jpg?size=120x&3"}
-       ],
-       "defensas":[
-            {"nick":"David León","nombre":"David","apellidos":"Jiménez León","edad":"36 años","nacionalidad":"España", "imagen":"img/plantilla/no-disponible.jpg"},
-            {"nick":"Poli","nombre":"Daniel","apellidos":"Olid Román","edad":"26 años","nacionalidad":"España", "imagen":"http://thumb.resfu.com/img_data/players/medium/113902.jpg?size=120x&3"},
-            {"nick":"Marco","nombre":"Marco","apellidos":"Espósito Rosbjorn","edad":"26 años","nacionalidad":"No disponible", "imagen":"img/plantilla/no-disponible.jpg"},
-            {"nick":"Álvaro Gutiérrez","nombre":"Álvaro","apellidos":"Gutiérrez Sarmiento","edad":"22 años","nacionalidad":"España", "imagen":"http://thumb.resfu.com/img_data/players/medium/257703.jpg?size=120x&3"}
-       ],
-       "centrocampistas":[
-            {"nick":"Samu","nombre":"Samuel","apellidos":"Jiménez Parrado","edad":"24 años","nacionalidad":"España", "imagen":"http://thumb.resfu.com/img_data/players/medium/72586.jpg?size=120x&3"},
-            {"nick":"Álex Pérez","nombre":"Alejandro","apellidos":"Pérez Cintado","edad":"27 años","nacionalidad":"Mo disponible", "imagen":"img/plantilla/no-disponible.jpg"},
-            {"nick":"Chikini","nombre":"Juan Carlos","apellidos":"Lobato Guzmán","edad":"25 años","nacionalidad":"España", "imagen":"http://thumb.resfu.com/img_data/players/medium/42253.jpg?size=120x&3"},
-            {"nick":"Galván","nombre":"José Luis","apellidos":"Galván Coronel","edad":"25 años","nacionalidad":"No disponible", "imagen":"img/plantilla/no-disponible.jpg"},
-            {"nick":"Paquito","nombre":"Francisco de Asís","apellidos":"Almario Morales","edad":"21 años","nacionalidad":"España", "imagen":"img/plantilla/no-disponible.jpg"},
-            {"nick":"J. Merino","nombre":"Jesús Nelson","apellidos":"Merino Gavilán","edad":"No disponible","nacionalidad":"España", "imagen":"img/plantilla/no-disponible.jpg"},
-            {"nick":"Valdenebro","nombre":"Álvaro","apellidos":"Valdenebro Reyes","edad":"No disponible","nacionalidad":"Esapaña", "imagen":"img/plantilla/no-disponible.jpg"},
-            {"nick":"F. Moreno","nombre":"Francisco Alejandro","apellidos":"Moreno González","edad":"No disponible","nacionalidad":"España", "imagen":"img/plantilla/no-disponible.jpg"},
-            {"nick":"M. Román","nombre":"Miguel Ángel","apellidos":"Román Moncada","edad":"No disponible","nacionalidad":"España", "imagen":"img/plantilla/no-disponible.jpg"},
-            {"nick":"Álex","nombre":"Alejandro","apellidos":"Camacho Ramírez","edad":"24 años","nacionalidad":"España", "imagen":"img/plantilla/no-disponible.jpg"}
-       ],
-       "delanteros":[
-            {"nick":"Raúl","nombre":"Raúl","apellidos":"Segura Castaño","edad":"24 años","nacionalidad":"España", "imagen":"http://thumb.resfu.com/img_data/players/medium/145169.jpg?size=120x&3"},
-            {"nick":"Jona","nombre":"Jonathan","apellidos":"Sánchez Muñoz","edad":"25 años","nacionalidad":"España", "imagen":"img/plantilla/no-disponible.jpg"},
-            {"nick":"Urdín","nombre":"Alberto","apellidos":"Urdín González","edad":"30 años","nacionalidad":"España", "imagen":"http://thumb.resfu.com/img_data/players/medium/37416.jpg?size=120x&3"},
-            {"nick":"Nico","nombre":"Adrián","apellidos":" Nicolás Russo","edad":"25 años","nacionalidad":"Argentina", "imagen":"img/plantilla/no-disponible.jpg"},
-            {"nick":"Marchante","nombre":"Juan Manuel","apellidos":"Marchante Tamayo","edad":"22 años","nacionalidad":"España", "imagen":"http://thumb.resfu.com/img_data/players/medium/124324.jpg?size=120x&3"}
-       ]
+       "cuerpoTecnico":{
+           "cabecera":"Entrenador",
+           "componentes":[
+               {"nick":"Alessandro","nombre":"Alessandro","apellidos":"Pierini","edad":"42 años","nacionalidad":"Italia","imagen":"img/plantilla/no-disponible.jpg"}
+           ]
+       },
+       "porteria": {
+           "cabecera":"Porteros",
+            "componentes":[
+                {"nick":"Barthez","nombre":"Ismael","apellidos":"Alba Molina","edad":"No disponible","nacionalidad":"España","imagen":"img/plantilla/no-disponible.jpg"},
+                {"nick":"Dani","nombre":"Daniel","apellidos":"Burgos Calderón","edad":"22 años","nacionalidad":"España","imagen":"http://thumb.resfu.com/img_data/players/small/237144.jpg"},
+                {"nick":"Álex Franco","nombre":"Alejandro","apellidos":"Franco Cordero","edad":"22 años","nacionalidad":"No disponible","imagen":"img/plantilla/no-disponible.jpg"},
+                {"nick":"Izquierdo","nombre":"Antonio","apellidos":"Izquierdo Sánchez","edad":"19 años","nacionalidad":"España","imagen":"http://thumb.resfu.com/img_data/players/medium/187013.jpg"}
+            ]
+       },
+       "defensa":{
+           "cabecera":"Defensas",
+            "componentes":[
+                {"nick":"David León","nombre":"David","apellidos":"Jiménez León","edad":"36 años","nacionalidad":"España", "imagen":"img/plantilla/no-disponible.jpg"},
+                {"nick":"Poli","nombre":"Daniel","apellidos":"Olid Román","edad":"26 años","nacionalidad":"España", "imagen":"http://thumb.resfu.com/img_data/players/medium/113902.jpg"},
+                {"nick":"Marco","nombre":"Marco","apellidos":"Espósito Rosbjorn","edad":"26 años","nacionalidad":"No disponible", "imagen":"img/plantilla/no-disponible.jpg"},
+                {"nick":"Álvaro Gutiérrez","nombre":"Álvaro","apellidos":"Gutiérrez Sarmiento","edad":"22 años","nacionalidad":"España", "imagen":"http://thumb.resfu.com/img_data/players/medium/257703.jpg"}
+           ]
+       },
+       "centro":{
+           "cabecera":"Centrocampistas",
+            "componentes":[
+                {"nick":"Samu","nombre":"Samuel","apellidos":"Jiménez Parrado","edad":"24 años","nacionalidad":"España", "imagen":"http://thumb.resfu.com/img_data/players/medium/72586.jpg"},
+                {"nick":"Álex Pérez","nombre":"Alejandro","apellidos":"Pérez Cintado","edad":"27 años","nacionalidad":"Mo disponible", "imagen":"img/plantilla/no-disponible.jpg"},
+                {"nick":"Chikini","nombre":"Juan Carlos","apellidos":"Lobato Guzmán","edad":"25 años","nacionalidad":"España", "imagen":"http://thumb.resfu.com/img_data/players/medium/42253.jpg"},
+                {"nick":"Galván","nombre":"José Luis","apellidos":"Galván Coronel","edad":"25 años","nacionalidad":"No disponible", "imagen":"img/plantilla/no-disponible.jpg"},
+                {"nick":"Paquito","nombre":"Francisco de Asís","apellidos":"Almario Morales","edad":"21 años","nacionalidad":"España", "imagen":"img/plantilla/no-disponible.jpg"},
+                {"nick":"J. Merino","nombre":"Jesús Nelson","apellidos":"Merino Gavilán","edad":"No disponible","nacionalidad":"España", "imagen":"img/plantilla/no-disponible.jpg"},
+                {"nick":"Valdenebro","nombre":"Álvaro","apellidos":"Valdenebro Reyes","edad":"No disponible","nacionalidad":"Esapaña", "imagen":"img/plantilla/no-disponible.jpg"},
+                {"nick":"F. Moreno","nombre":"Francisco Alejandro","apellidos":"Moreno González","edad":"No disponible","nacionalidad":"España", "imagen":"img/plantilla/no-disponible.jpg"},
+                {"nick":"M. Román","nombre":"Miguel Ángel","apellidos":"Román Moncada","edad":"No disponible","nacionalidad":"España", "imagen":"img/plantilla/no-disponible.jpg"},
+                {"nick":"Álex","nombre":"Alejandro","apellidos":"Camacho Ramírez","edad":"24 años","nacionalidad":"España", "imagen":"img/plantilla/no-disponible.jpg"}
+           ]
+       },
+       "delantera":{
+           "cabecera":"Delanteros",
+                "componentes":[
+                {"nick":"Raúl","nombre":"Raúl","apellidos":"Segura Castaño","edad":"24 años","nacionalidad":"España", "imagen":"http://thumb.resfu.com/img_data/players/medium/145169.jpg"},
+                {"nick":"Jona","nombre":"Jonathan","apellidos":"Sánchez Muñoz","edad":"25 años","nacionalidad":"España", "imagen":"img/plantilla/no-disponible.jpg"},
+                {"nick":"Urdín","nombre":"Alberto","apellidos":"Urdín González","edad":"30 años","nacionalidad":"España", "imagen":"http://thumb.resfu.com/img_data/players/medium/37416.jpg"},
+                {"nick":"Nico","nombre":"Adrián","apellidos":" Nicolás Russo","edad":"25 años","nacionalidad":"Argentina", "imagen":"img/plantilla/no-disponible.jpg"},
+                {"nick":"Marchante","nombre":"Juan Manuel","apellidos":"Marchante Tamayo","edad":"22 años","nacionalidad":"España", "imagen":"http://thumb.resfu.com/img_data/players/medium/124324.jpg"}
+           ]
+       }
    }
 }
