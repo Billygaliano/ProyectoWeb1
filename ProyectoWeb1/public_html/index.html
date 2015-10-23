@@ -70,7 +70,7 @@
                                 <a href="historia.html">Historia</a>
                             </li>
                             <li>
-                                <a href="historia.html">Hemeroteca</a>
+                                <a href="hemeroteca.html">Hemeroteca</a>
                             </li>
                         </ul>
                     </li>
@@ -196,13 +196,13 @@
         </div>
         <!-- /.row -->
 
-        <!-- Features Section -->
+       <!-- Features Section -->
         <div class="row">
             <div class="col-lg-8">
                 <h2 class="page-header">Clasificación</h2>
             </div>
             <div class="col-md-8">                
-                <table class="rankings  grated" width="100%" bgcolor="#FDFDFD" style="background:#FDFDFD;color:#0099CC;font-size:12px;border:1px solid #DDDDDD;border-spacing:5px;border-collapse:separate;" cellpadding="5">
+                <table class="rankings  grated" width="100%" bgcolor="#FDFDFD" style="background:#FDFDFD;color:#0099CC;font-size:14px;border:1px solid #DDDDDD;border-spacing:5px;border-collapse:separate;" cellpadding="5">
                     <thead>
                         <tr>
                             <th colspan="8" align="center"><a style="color:#006DA3;" href="http://www.resultados-futbol.com/tercera" target="_BLANK">Tercera División</a></th>
@@ -255,17 +255,17 @@
 
     <!-- jQuery & JavasScript-->
     <script src="js/jquery.js"></script>
-    <script>
-        window.onload = function loadJSON()
+     <script>
+        window.onload = function loadClasificacion()
         {
             $.getJSON( "json/clasificacion.json", function(clasificacion) {
                 var tabla_clasificacion = ("<tr style='color:#87888A;'><td align='left'>Pos</td><td align='left'>Equipo</td><td></td><td align='right'>Pts</td><td align='right'>PG</td><td align='right'>PE</td><td align='right'>PP</td><td align='right'>GF</td><td align='right'>GC</td></tr>");
-                for (equipo in clasificacion.tabla) {
-                    tabla_clasificacion += ("<tr><th>" + clasificacion.tabla[equipo].pos + "</th><td><img src=" + clasificacion.tabla[equipo].shield + " width='30'></td><td>" + clasificacion.tabla[equipo].team + "</td><td align='right'>" + clasificacion.tabla[equipo].points + "</td><td align='right'>" + clasificacion.tabla[equipo].wins + "</td><td align='right'>" + clasificacion.tabla[equipo].draws + "</td><td  align='right'>" + clasificacion.tabla[equipo].losses + "</td><td align='right'>" + clasificacion.tabla[equipo].gf + "</td><td align='right'>" + clasificacion.tabla[equipo].ga + "</td>");
+                for (var equipo in clasificacion.tabla) {
+                    tabla_clasificacion += ("<tr><th>" + clasificacion.tabla[equipo].pos + "</th><td><img src=" + clasificacion.tabla[equipo].shield + " width='20'></td><td>" + clasificacion.tabla[equipo].team + "</td><td align='right'>" + clasificacion.tabla[equipo].points + "</td><td align='right'>" + clasificacion.tabla[equipo].wins + "</td><td align='right'>" + clasificacion.tabla[equipo].draws + "</td><td  align='right'>" + clasificacion.tabla[equipo].losses + "</td><td align='right'>" + clasificacion.tabla[equipo].gf + "</td><td align='right'>" + clasificacion.tabla[equipo].ga + "</td>");
                 }
                 $("#clasificacion").html(tabla_clasificacion);
               });
-          }
+          };
     </script>
     <!--Ejemplo de cómo sería hacer la petición a la API de http://www.resultados-futbol.com/
     <script type="application/javascript">
