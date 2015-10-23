@@ -118,45 +118,11 @@
         </div>
         <!-- /.row -->
 
-        <!-- Portfolio Section -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Calendario</h2>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-        </div>
+        <!-- Calendar Section -->
+        <div id="calendario" class="row"></div>
         <!-- /.row -->
 
-       <!-- Features Section -->
+       <!-- Clasification Section -->
         <div class="row">
             <div class="col-lg-8">
                 <h2 class="page-header">Clasificación</h2>
@@ -208,17 +174,39 @@
     <!-- jQuery & JavasScript-->
     <script src="js/jquery.js"></script>
      <script>
-        window.onload = function loadClasificacion()
+        window.onload = function cargaJSON()
         {
+            //Carga contenido de las jornadas
+            $.getJSON( "json/jornadas.json", function(jornadas) {
+                var jornadas_calendario = ("<div class='col-lg-12'><h2 class='page-header'>Próximos partidos</h2></div>");
+                var hoy = new Date();
+                var iterator_jornada = 0;
+                
+                for (var jornada in jornadas.calendario) {
+                    var fecha_parseada = (jornadas.calendario[jornada].fecha).split("/");
+                    fecha_parseada = fecha_parseada[2]+"-"+fecha_parseada[1]+"-"+fecha_parseada[0];
+                    fecha_parseada = Date.parse(fecha_parseada);
+                    var fecha_jornada = new Date(fecha_parseada);
+                    
+                    if((fecha_jornada > hoy) && (iterator_jornada < 3)){
+                        iterator_jornada++;
+                        jornadas_calendario += ("<div class='calendario col-md-4 img-portfolio'><div class='panel panel-default'> <div class='panel-heading  calendario_color'><h4>" + jornadas.calendario[jornada].jornada +"</h4></div>" +  "<img class='img-responsive img-hover' src='" + jornadas.calendario[jornada].imagen + "' alt='' />" + "<p>" + jornadas.calendario[jornada].equipoLocal + " - " + jornadas.calendario[jornada].equipoRival + "</p>" + "<p><date>" + jornadas.calendario[jornada].fecha + "</p>"  + "<p>Resultado: " + jornadas.calendario[jornada].resultado + "</p></div></div>");
+                    }
+                }
+                $("#calendario").html(jornadas_calendario);
+            });
+            
+            //Carga contenido de la clasificación
             $.getJSON( "json/clasificacion.json", function(clasificacion) {
                 var tabla_clasificacion = ("<tr style='color:#87888A;'><td align='left'>Pos</td><td align='left'>Equipo</td><td></td><td align='right'>Pts</td><td align='right'>PG</td><td align='right'>PE</td><td align='right'>PP</td><td align='right'>GF</td><td align='right'>GC</td></tr>");
                 for (var equipo in clasificacion.tabla) {
                     tabla_clasificacion += ("<tr><th>" + clasificacion.tabla[equipo].pos + "</th><td><img src=" + clasificacion.tabla[equipo].shield + " width='20'></td><td>" + clasificacion.tabla[equipo].team + "</td><td align='right'>" + clasificacion.tabla[equipo].points + "</td><td align='right'>" + clasificacion.tabla[equipo].wins + "</td><td align='right'>" + clasificacion.tabla[equipo].draws + "</td><td  align='right'>" + clasificacion.tabla[equipo].losses + "</td><td align='right'>" + clasificacion.tabla[equipo].gf + "</td><td align='right'>" + clasificacion.tabla[equipo].ga + "</td>");
                 }
                 $("#clasificacion").html(tabla_clasificacion);
-              });
+            });
           };
     </script>
+    
     <!--Ejemplo de cómo sería hacer la petición a la API de http://www.resultados-futbol.com/
     <script type="application/javascript">
         window.onload = function loadJSON()
