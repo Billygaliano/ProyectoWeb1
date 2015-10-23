@@ -1,6 +1,6 @@
 {
     "calendario": [
-        {"jornada":"Jornada 1", "equipoLocal":"CD Ronda","equipoRival":"Guadix","fecha":"05/12/2015","resultado":"-","imagen":"img/jornadas/jornada1.png", "id":"1"},
+        {"jornada":"Jornada 1", "equipoLocal":"CD Ronda","equipoRival":"Guadix","fecha":"23/08/2015","resultado":"-","imagen":"img/jornadas/jornada1.png", "id":"1"},
         {"jornada":"Jornada 2", "equipoLocal":"Huétor Tájar","equipoRival":"CD Ronda","fecha":"30/08/2015","resultado":"2 - 0","imagen":"img/jornadas/jornada2.png", "id":"1"},
         {"jornada":"Jornada 3", "equipoLocal":"Maracena","equipoRival":"CD Ronda","fecha":"06/09/2015","resultado":"0 - 2","imagen":"img/jornadas/jornada3.png", "id":"1"},
         {"jornada":"Jornada 4", "equipoLocal":"CD Ronda","equipoRival":"Martos CD","fecha":"13/09/2015","resultado":"1 - 6","imagen":"img/jornadas/jornada4.png", "id":"1"},
