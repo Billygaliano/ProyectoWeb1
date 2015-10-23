@@ -19,7 +19,7 @@ header .carousel{
 }
 
 .navbar-inverse {
-  height: 70px;
+  height: 75px;
 }
 
 .col_top_align {
@@ -46,4 +46,19 @@ header .carousel{
 
 #recordar{
     margin-top: 9px;
+}
+
+
+
+.calendario p{
+    margin-left: 5px;
+    margin-top: 5px;
+    text-align: center;
+    color: #000;
+}
+
+.panel-default>.calendario_color {
+    color: #fff;
+    background-color: #002240;
+    border-color: #002240;
 }
