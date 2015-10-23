@@ -1,0 +1,9 @@
+function mostrarMenu()
+{
+    document.write('<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html"><img src="img/logotipo_cabecera.png" width="300" alt="Logo Ronda"/></a></div><div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><ul class="nav navbar-nav navbar-right"><li><a href="index.html">Home</a></li><li><a href="club.html">Club</a></li><li><a href="socio.html">Hazte socio</a></li><li><a href="calendario.html">Calendario</a></li><li><a href="noticias.html">Noticias</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Sobre C.D. Ronda<b class="caret"></b></a><ul class="dropdown-menu"><li><a href="historia.html">Historia</a></li><li><a href="hemeroteca.html">Hemeroteca</a></li></ul></li></ul></div></div></nav>');
+}
+
+function mostrarFooter()
+{
+    document.write('<footer><div class="row"><div class="col-lg-4"><p>Copyright &copy; C.D Ronda 2015</p></div><div class="col-lg-3"><img id="logoApy" src="img/Logo-APYMER.png" alt="Logotipo Apymer"/> <img id="logoCha" src="img/logo_charry.png" alt="Logo Charry"/><p id="patro">Patrocinadores:</p></div><div class="col-lg-4 font_icon" style="margin-top: -7px; font-size: 30px; text-align: right"><a href="https://www.facebook.com/CD-Ronda-112109498853175/" target="_blank" rel="nofollow"><i class="fa fa-facebook-square"></i></a><a href="https://twitter.com/CDRonda" target="_blank" rel="nofollow"><i class="fa fa-twitter-square"></i></a></div></div></footer>');
+}
