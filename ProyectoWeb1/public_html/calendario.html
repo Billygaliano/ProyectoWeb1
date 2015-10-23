@@ -39,122 +39,22 @@
     <script>
         mostrarMenu();
     </script>
-
-    <!-- Page Content -->
-    <!--<div id="lista_jornadas" class="container">
-
-        <!-- Page Heading/Breadcrumbs -->
-      <!--  <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Calendario
-                    <small>Jornadas</small>
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
-                    </li>
-                    <li class="active">Calendario</li>
-                </ol>
-            </div>
-        </div> -->
+    
+    <!--Page content-->
     <div class="container">
         <div id="jornadas"></div>
         
-        <!-- /.row -->
-
-        <!-- Projects Row -->
-      <!--  <div class="row">
-            <div class="col-md-4 img-portfolio">
-                    <img class="img-responsive img-hover" src="img/jornada1.png" alt="" />
-                <h3>Jornada 1</h3>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-4 img-portfolio">
-                <img class="img-responsive img-hover" src="img/jornada2.png" alt="">         
-                <h3>Jornada 2</h3>          
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-4 img-portfolio">
-                <img class="img-responsive img-hover" src="img/jornada3.png" alt="">
-                <h3>Jornada 3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Projects Row -->
-       <!-- <div class="row">
-            <div class="col-md-4 img-portfolio">
-                <img class="img-responsive img-hover" src="img/jornada4.png" alt="">
-                <h3>Jornada 4 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-4 img-portfolio">
-                <img class="img-responsive img-hover" src="img/jornada5.png" alt="">
-                <h3>Jornada 5 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-4 img-portfolio">
-                <img class="img-responsive img-hover" src="img/jornada6.png" alt="">
-                <h3>Jornada 6</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-        </div>
-
-        <!-- Projects Row -->
-      <!--  <div class="row">
-            <div class="col-md-4 img-portfolio">
-                <img class="img-responsive img-hover" src="img/jornada7.png" alt="">
-                <h3>Jornada 7</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-4 img-portfolio">
-                <img class="img-responsive img-hover" src="img/jornada8.png" alt="">
-                <h3>Jornada 8</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-4 img-portfolio">
-                    <img class="img-responsive img-hover" src="img/jornada9.png" alt="">
-                <h3>Jornada 9</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-        </div> -->
-        <!-- /.row -->
-
         <hr>
-
-        <!-- Pagination -->
-        <div class="row text-center">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="portfolio-3-col.html">1</a>
-                    </li>
-                    <li>
-                        <a href="calendario_2.html">2</a>
-                    </li>
-                    <li>
-                        <a href="calendario_3.html">3</a>
-                    </li>
-                    <li>
-                        <a href="calendario_4.html">4</a>
-                    </li>
-                    <li>
-                        <a href="calendario_5.html">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- /.row -->
-
+        
+        <div class="pagination">
+            <a class="btn btn-primary" href="calendario.html?n=1">1</a>
+            <a class="btn btn-primary" href="calendario.html?n=2">2</a>
+            <a class="btn btn-primary" href="calendario.html?n=3">3</a>
+            <a class="btn btn-primary" href="calendario.html?n=4">4</a>
+        </div> 
+        
         <hr>
-
+        
         <!-- Footer -->
         <script>
             mostrarFooter();
@@ -165,22 +65,24 @@
     
      <!-- jQuery & JavasScript-->
     <script src="js/jquery.js"></script>
+    
     <script>
-        window.onload = function loadJornadas()
-        {
+        var dir=$(location).attr('href');
+        var pieces=dir.split("=");
+        var id=pieces[1];
+        
             $.getJSON("json/jornadas.json", function(jornadas) {
                 var lista_jornadas = ("<div class='row'><div class='col-lg-12'> <h1 class='page-header'>Calendario <small>Jornadas</small></h1><ol class='breadcrumb'><li><a href='index.html'>Home</a></li><li class='active'>Calendario</li></ol></div>");
                 for (var fila in jornadas.calendario) {
-                    lista_jornadas += ("<div class='calendario col-md-4 img-portfolio'><div class='panel panel-default'> <div class='panel-heading  calendario_color'><h4>" + jornadas.calendario[fila].jornada +"</h4></div>" +  "<img class='img-responsive img-hover' src='" + jornadas.calendario[fila].imagen + "' alt='' />" + "<p>" + jornadas.calendario[fila].equipoLocal + " - " + jornadas.calendario[fila].equipoRival + "</p>" + "<p><date>" + jornadas.calendario[fila].fecha + "</p>"  + "<p>Resultado: " + jornadas.calendario[fila].resultado + "</p></div></div>");                         
+                    if(id===jornadas.calendario[fila].id){
+                    lista_jornadas += ("<div class='calendario col-md-4 img-portfolio'><div class='panel panel-default'><div class='panel-heading  calendario_color'><h4>" + jornadas.calendario[fila].jornada + "</h4></div>" +  "<img class='img-responsive img-hover' src='" + jornadas.calendario[fila].imagen + "' alt='"+ jornadas.calendario[fila].jornada +"' />" + "<p>" + jornadas.calendario[fila].equipoLocal + " - " + jornadas.calendario[fila].equipoRival + "</p>" + "<p><date>" + jornadas.calendario[fila].fecha + "</p>"  + "<p>Resultado: " + jornadas.calendario[fila].resultado + "</p></div></div>");                         
                 }
+            }
                 lista_jornadas += "</div>";
             $("#jornadas").html(lista_jornadas);
             });
-        };
+       
     </script>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
