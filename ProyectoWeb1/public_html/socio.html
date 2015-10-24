@@ -167,46 +167,45 @@
         <!-- main -->    
 
     <script type="text/javascript"> 
-        $("input").bind("keyup",function(){
-            localStorage.name=$("#name").val();
-            localStorage.apellido=$("#apellido").val();
-            localStorage.dni=$("#dni").val();
-            localStorage.phone=$("#phone").val();
-            localStorage.email=$("#email").val();
-        });
-        
-        $("#recordar").bind("click",function(){
-            $("#name").val(localStorage.name);
-            $("#apellido").val(localStorage.apellido); 
-            $("#dni").val(localStorage.dni); 
-            $("#phone").val(localStorage.phone); 
-            $("#email").val(localStorage.email);
-        });
+        $(document).ready(function(){
+            //------ Guardar en el browser -----------------------
+            $("input").bind("keyup",function(){
+                localStorage.name=$("#name").val();
+                localStorage.apellido=$("#apellido").val();
+                localStorage.dni=$("#dni").val();
+                localStorage.phone=$("#phone").val();
+                localStorage.email=$("#email").val();
+            });
+
+            $("#recordar").bind("click",function(){
+                $("#name").val(localStorage.name);
+                $("#apellido").val(localStorage.apellido); 
+                $("#dni").val(localStorage.dni); 
+                $("#phone").val(localStorage.phone); 
+                $("#email").val(localStorage.email);
+            });
 
         
-    </script>
-    
-    <script type="text/javascript">
-        $(document).ready(function(){
-        $("form").bind("submit",function(){
-            var dni=$("#dni").val();
-            if(dni.length === 9){
-                var numeroDNI = dni.substring(0,8);
-                var letraDNI = dni.substring(8);
-                
-                var get_letra = function(dni){
-                    var table = "TRWAGMYFPDXBNJZSQVHLCKE";
-                    return table.charAt(dni % 23);
-                };
-                
-                var letra_obtenida = get_letra(numeroDNI);
-                if(letra_obtenida !== letraDNI.toUpperCase()) $("#dni").val("");
-                
-            }else{
-               $("#dni").val("");  
-            }       
-        }); 
-    });
+            //------------ Validación del DNI ---------------------
+            $("form").bind("submit",function(){
+                var dni=$("#dni").val();
+                if(dni.length === 9){
+                    var numeroDNI = dni.substring(0,8);
+                    var letraDNI = dni.substring(8);
+
+                    var get_letra = function(dni){
+                        var table = "TRWAGMYFPDXBNJZSQVHLCKE";
+                        return table.charAt(dni % 23);
+                    };
+
+                    var letra_obtenida = get_letra(numeroDNI);
+                    if(letra_obtenida !== letraDNI.toUpperCase()) $("#dni").val("");
+
+                }else{
+                   $("#dni").val("");  
+                }       
+            }); 
+        });
     </script>
 
     <!-- Contact Form JavaScript -->
@@ -216,6 +215,8 @@
     
     <script type="text/javascript">   
         $(document).ready(function(){
+        
+        //------ Asignar id a div con class=("help-block") para no alertar a los campos escritos-------
             $(".help-block").each(function(i){
                 $(this).attr("id",i);
             });
@@ -224,12 +225,8 @@
                 $("div").remove("#5");
                 $("#contactForm").removeClass("has-error");
             });  
-        });
-    </script>
-    
-    <script type="text/javascript">
         
-        $(document).ready(function(){
+        //--------------- Ajax regiones segun pais seleccionado-------------------------------
             $("#paises").change(function(){ 
                 $.ajax({
                     url: 'ajax/region.html',
@@ -239,23 +236,17 @@
                             select.remove(select.selectedIndex);
                         }
                         var pais = $('#paises').val();
-                        alert(pais);
-                        var region_pais = data.valueOf();
                         var regiones = data.split('<br />');
                         for (var i=0; i<6; i++){
-                            var region_pais = regiones[i].slice(16,18);
-                            alert(region_pais);
-                            if (pais === region_pais) {
-                                alert(regiones[i]);
+                            if (pais === regiones[i].slice(16,18)) {
                                 $('#region').append(regiones[i]);
                             }
                         }
                     }
                 });
             });
-        });
-
-        
+        });            
+        //-------------------------------------------------------------------------------------    
     </script>
 
 
