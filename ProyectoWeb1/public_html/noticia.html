@@ -82,7 +82,7 @@
             var n=0;
             for (n in noticias.noticias){
                 if(id===noticias.noticias[n].id){
-                    dat_noticias+="<div class='row'><div class='col-lg-12'><h1 class='page-header'>"+noticias.noticias[n].titulo+"</h1><ol class='breadcrumb'><li><a href='index.html'>Home</a></li><li class='active'>Noticias</li></ol></div></div><div class='row'><div class='col-lg-12'><img class='img-responsive estilo_imagen3' src=" + noticias.noticias[n].imagen + "><hr><p class='lead'>"+noticias.noticias[n].extension+"</p><hr>";
+                    dat_noticias+="<div class='row'><div class='col-lg-12'><h1 class='page-header'>"+noticias.noticias[n].titulo+"</h1><ol class='breadcrumb'><li><a href='index.html'>Home</a></li><li class='active'>Noticias</li></ol></div></div><div class='row'><div class='col-lg-12'><img class='img-responsive estilo_imagen3' src=" + noticias.noticias[n].imagen + " alt='" + noticias.noticias[n].titulo + "'><hr><p class='lead'>"+noticias.noticias[n].extension+"</p><hr>";
                 }
             }
             $("#notice").html(dat_noticias);
