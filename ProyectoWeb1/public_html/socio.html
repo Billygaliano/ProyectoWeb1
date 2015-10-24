@@ -109,7 +109,17 @@
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>País:</label>
-                            <select name="pais" class="form-control" id="paises"></select>
+                            <select name="paises" class="form-control" id="paises">
+                                <option value="-">-</option>
+                                <option value="ES">España</option> 
+                                <option value="PT">Portugal</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>Región:</label>
+                            <select name="region" class="form-control" id="region"></select>
                         </div>
                     </div>
                     <div class="control-group form-group">
@@ -217,12 +227,34 @@
         });
     </script>
     
-    <script type="text/javascript"> 
-            $.ajax({
-                url: 'ajax/pais.html',
-                success: function(data){
-                    $('#paises').html(data);
-                }});
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+            $("#paises").change(function(){ 
+                $.ajax({
+                    url: 'ajax/region.html',
+                    success: function(data){
+                        var select = document.getElementById("region");
+                        for(i=0; select.length; i++){
+                            select.remove(select.selectedIndex);
+                        }
+                        var pais = $('#paises').val();
+                        alert(pais);
+                        var region_pais = data.valueOf();
+                        var regiones = data.split('<br />');
+                        for (var i=0; i<6; i++){
+                            var region_pais = regiones[i].slice(16,18);
+                            alert(region_pais);
+                            if (pais === region_pais) {
+                                alert(regiones[i]);
+                                $('#region').append(regiones[i]);
+                            }
+                        }
+                    }
+                });
+            });
+        });
+
         
     </script>
 
