@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Web del Club Deportivo Ronda">
+    <meta name="author" content="web club deportivo ronda, ronda, c.d. ronda, web oficial">
 
     <title>C.D. Ronda</title>
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
@@ -59,7 +59,7 @@
                 <a href="socio.html"><div class="fill" style="background-image:url('img/slide/socio.jpg');"></div></a>
             </div>
             <div class="item">
-                <a href="portfolio-3-col.html"><div class="fill" style="background-image:url('img/slide/calendario.jpg');"></div></a>
+                <a href="calendario.html?n=1"><div class="fill" style="background-image:url('img/slide/calendario.jpg');"></div></a>
             </div>
         </div>
 
@@ -83,25 +83,25 @@
         <div id="calendario" class="row"></div>
         <!-- /.row -->
 
-       <!-- Clasification Section -->
+       <!-- Clasification & Twitter Sections -->
         <div class="row">
             <div class="col-lg-8">
                 <h2 class="page-header">Clasificación</h2>
             </div>
             <div class="col-md-8">                
-                <table class="rankings  grated" width="100%" bgcolor="#FDFDFD" style="background:#FDFDFD;color:#0099CC;font-size:14px;border:1px solid #DDDDDD;border-spacing:5px;border-collapse:separate;" cellpadding="5">
+                <table class="rankings" bgcolor="#FDFDFD" cellpadding="5">
                     <thead>
                         <tr>
-                            <th colspan="8" align="center"><a style="color:#006DA3;" href="http://www.resultados-futbol.com/tercera" target="_BLANK">Tercera División</a></th>
+                            <th colspan="8" align="center"><a href="http://www.resultados-futbol.com/tercera" target="_BLANK">Tercera División</a></th>
                         </tr>
                     </thead>
                     <tbody id="clasificacion"></tbody>
                 </table>
             </div>
-            <div class="col-lg-4 col_top_align" style="margin-top: -102px">
+            <div class="col-md-4 col_top_align">
                 <h2 class="page-header">Síguenos en Twitter</h2>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/CDRonda" data-widget-id="656760760673153024">Tweets por el @CDRonda.</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
             </div>
@@ -137,7 +137,6 @@
      <script>
         window.onload = function cargaJSON()
         {
-            
             //Noticias
             $.getJSON("json/noticias.json", function(noticias){
                 var datos_noticias="<div class='col-lg-12'><h1 class='page-header'>Noticias</h1></div>";
@@ -162,7 +161,7 @@
                     
                     if((fecha_jornada > hoy) && (iterator_jornada < 3)){
                         iterator_jornada++;
-                        jornadas_calendario += ("<div class='calendario col-md-4 img-portfolio'><div class='panel panel-default'> <div class='panel-heading  calendario_color'><h4>" + jornadas.calendario[jornada].jornada +"</h4></div>" +  "<img class='img-responsive img-hover' src='" + jornadas.calendario[jornada].imagen + "' alt='' />" + "<p>" + jornadas.calendario[jornada].equipoLocal + " - " + jornadas.calendario[jornada].equipoRival + "</p>" + "<p><date>" + jornadas.calendario[jornada].fecha + "</p>"  + "<p>Resultado: " + jornadas.calendario[jornada].resultado + "</p></div></div>");
+                        jornadas_calendario += ("<div class='calendario col-md-4 img-portfolio'><div class='panel panel-default'> <div class='panel-heading  calendario_color'><h4>" + jornadas.calendario[jornada].jornada +"</h4></div>" +  "<img class='img-responsive img-hover' src='" + jornadas.calendario[jornada].imagen + "' alt='' />" + "<p>" + jornadas.calendario[jornada].equipoLocal + " - " + jornadas.calendario[jornada].equipoRival + "</p>" + "<p><date>" + jornadas.calendario[jornada].fecha + "</p>"  + "</div></div>");
                     }
                 }
                 $("#calendario").html(jornadas_calendario);
@@ -170,7 +169,7 @@
             
             //Carga contenido de la clasificación
             $.getJSON( "json/clasificacion.json", function(clasificacion) {
-                var tabla_clasificacion = ("<tr style='color:#87888A;'><td align='left'>Pos</td><td align='left'>Equipo</td><td></td><td align='right'>Pts</td><td align='right'>PG</td><td align='right'>PE</td><td align='right'>PP</td><td align='right'>GF</td><td align='right'>GC</td></tr>");
+                var tabla_clasificacion = ("<tr class='cabecera_tabla'><td align='left'>Pos</td><td align='left'>Equipo</td><td></td><td align='right'>Pts</td><td align='right'>PG</td><td align='right'>PE</td><td align='right'>PP</td><td align='right'>GF</td><td align='right'>GC</td></tr>");
                 for (var equipo in clasificacion.tabla) {
                     tabla_clasificacion += ("<tr><th>" + clasificacion.tabla[equipo].pos + "</th><td><img src=" + clasificacion.tabla[equipo].shield + " width='20'></td><td>" + clasificacion.tabla[equipo].team + "</td><td align='right'>" + clasificacion.tabla[equipo].points + "</td><td align='right'>" + clasificacion.tabla[equipo].wins + "</td><td align='right'>" + clasificacion.tabla[equipo].draws + "</td><td  align='right'>" + clasificacion.tabla[equipo].losses + "</td><td align='right'>" + clasificacion.tabla[equipo].gf + "</td><td align='right'>" + clasificacion.tabla[equipo].ga + "</td>");
                 }
@@ -178,30 +177,6 @@
             });
           };
     </script>
-    
-    <!--Ejemplo de cómo sería hacer la petición a la API de http://www.resultados-futbol.com/
-    <script type="application/javascript">
-        window.onload = function loadJSON()
-        {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange=function()
-            {
-                if (xmlhttp.readyState==4 && xmlhttp.status==200)
-                {
-                    // Parsador de la estructura de datos JSON contenida en xmlhttp.responseText usando la función JSON.parse
-                    var JSONObject = JSON.parse(xmlhttp.responseText);
-
-                    // La variable JSONObject contiene ahora la estructura de datos y puede ser accedida.
-                    // Asigna el objeto members a los elementos del DOM necesarios para pintar la tabla de datos.
-                    document.getElementById("pos_equipo").innerHTML = JSONObject.pos;
-                    document.getElementById("team_equipo").innerHTML = JSONObject.team;
-                    //Y así leeríamos los elementos del JSON que necesitemos para convertirlos a elemenos del DOM
-                }
-            }
-            xmlhttp.open("GET","http://www.resultados-futbol.com/scripts/api/api.php?tz=Europe/Ronda&format=json&req=tables&key=ba008af7f6b6c2e8699fc64a1d54cd01&league=4&group=9",true);
-            xmlhttp.send();
-        }
-    </script>-->
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>

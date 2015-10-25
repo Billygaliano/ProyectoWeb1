@@ -38,7 +38,5 @@
         {"jornada":"Jornada 36", "equipoLocal":"CD Ronda","equipoRival":"At. Malagueño","fecha":"01/05/2016","resultado":"-","imagen":"img/jornadas/jornada36.png", "id":"4"},
         {"jornada":"Jornada 37", "equipoLocal":"Mancha Real","equipoRival":"CD Ronda","fecha":"08/05/2016","resultado":"-","imagen":"img/jornadas/jornada37.png", "id":"4"}, 
         {"jornada":"Jornada 38", "equipoLocal":"CD Ronda","equipoRival":"UD San Pedro","fecha":"15/05/2016","resultado":"-","imagen":"img/jornadas/jornada38.png", "id":"4"}
-       
-               
     ]
 }

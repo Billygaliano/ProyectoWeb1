@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Web del Club Deportivo Ronda">
+    <meta name="author" content="web club deportivo ronda, ronda, c.d. ronda, web oficial">
 
     <title>C.D. Ronda | Noticia</title>
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
@@ -43,8 +43,11 @@
 
     <!-- Page Content -->
     <div class="container">
+        
+        <!-- /.row -->
         <div id="notice"></div>
-        <!-- Comments Form -->
+        
+        <!-- Comments -->
         <div class="well">
             <h4>Deja tu comentario:</h4>
                 <div class="form-group">
@@ -53,18 +56,14 @@
                 <button id="add" type="submit" class="btn btn-primary">Enviar</button>
         </div>
         <p id="parrafo"></p>
-        <hr> 
-
         
-
-
+        <hr> 
+        
         <!-- Footer -->
         <script>
             mostrarFooter();
         </script>
     </div>
-
-    
     <!-- /.container -->
 
     <!-- jQuery -->
@@ -82,7 +81,7 @@
             var n=0;
             for (n in noticias.noticias){
                 if(id===noticias.noticias[n].id){
-                    dat_noticias+="<div class='row'><div class='col-lg-12'><h1 class='page-header'>"+noticias.noticias[n].titulo+"</h1><ol class='breadcrumb'><li><a href='index.html'>Home</a></li><li class='active'>Noticias</li></ol></div></div><div class='row'><div class='col-lg-12'><img class='img-responsive estilo_imagen3' src=" + noticias.noticias[n].imagen + " alt='" + noticias.noticias[n].titulo + "'><hr><p class='lead'>"+noticias.noticias[n].extension+"</p><hr>";
+                    dat_noticias+="<div class='row'><div class='col-lg-12'><h1 class='page-header'>"+noticias.noticias[n].titulo+"</h1><ol class='breadcrumb'><li><a href='index.html'>Home</a></li><li class='active'>Noticias</li></ol></div></div><div class='row'><div class='col-lg-12'><img class='img-responsive estilo_imagen2' src=" + noticias.noticias[n].imagen + " alt='" + noticias.noticias[n].titulo + "'><hr><p class='lead'>"+noticias.noticias[n].extension+"</p><hr>";
                 }
             }
             $("#notice").html(dat_noticias);

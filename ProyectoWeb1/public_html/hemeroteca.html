@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Web del Club Deportivo Ronda">
+    <meta name="author" content="web club deportivo ronda, ronda, c.d. ronda, web oficial">
 
     <title>C.D. Ronda | Hemeroteca.</title>
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
@@ -48,7 +48,9 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Hemeroteca</h1>
+                <h1 class="page-header">Hemeroteca
+                    <small>del Club</small>
+                </h1>
                 <ol class="breadcrumb">
                     <li><a href="index.html">Home</a>
                     </li>
@@ -60,54 +62,49 @@
 
         <!-- Content Row -->
         <div class="row">
-
-            <!-- Blog Post Content Column --> 
             <div class="col-lg-12">
-                <!-- Preview Image -->
-                <hr>
-                
-                
-                <div class="videoreciente">
-                    <p class="lead"> Historia Digital (Canal Oficial) </p>                   
-                    <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=fanscdronda" width="480" height="400" frameBorder="0"></iframe>
-                </div>
-                
-                <div> 
-                    <p class="lead"> Videos Recientes </p>
-                    <iframe id="vid" width="480" height="400" src="" frameborder="0" allowfullscreen></iframe>
-                </div>
-                
-                
-                <hr>
- 
-                <!-- Blog Comments -->
 
-                <!-- Comments Form -->
-                <div class="well comentario">
-                    <h4>Deja un comentario:</h4>
-                    
-                        <div class="form-group">
-                            <textarea id="mensaje1" class="form-control" rows="3"></textarea>
-                        </div>
-                        <button id="add1" type="submit" class="btn btn-primary">Enviar</button>
-                   
+                <!-- Blog Post Content Column --> 
+                <div class="col-lg-6">
+                    <!-- Preview Image -->                
+
+                    <div class="videoreciente">
+                        <p class="lead"> Historia Digital (Canal Oficial) </p>                   
+                        <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=fanscdronda" frameBorder="0"></iframe>
+                    </div>
+                    <!-- Comments -->
+                    <div class="well comentario">
+                        <h4>Deja un comentario:</h4>
+
+                            <div class="form-group">
+                                <textarea id="mensaje1" class="form-control" rows="3"></textarea>
+                            </div>
+                            <button id="add1" type="submit" class="btn btn-primary">Enviar</button>
+                    </div>                
+                    <p id="parrafo1"></p>
                 </div>
-                
-                <div class="well comentario2">
-                    <h4>Deja un comentario:</h4>
-                    
-                        <div class="form-group">
-                            <textarea id="mensaje2"  class="form-control" rows="3"></textarea>
-                        </div>
-                        <button id="add2" type="submit" class="btn btn-primary">Enviar</button>
-                   
+
+                <div class="col-lg-6">
+                    <div class="videoreciente"> 
+                        <p class="lead"> Videos Recientes </p>
+                        <iframe id="vid" src="" frameborder="0" allowfullscreen></iframe>
+                    </div> 
+                    <!-- Comments -->                
+                    <div class="well comentario">
+                        <h4>Deja un comentario:</h4>
+
+                            <div class="form-group">
+                                <textarea id="mensaje2"  class="form-control" rows="3"></textarea>
+                            </div>
+                            <button id="add2" type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                    <p id="parrafo2"></p>
                 </div>
-               <p id="parrafo1"></p>
-                <p id="parrafo2"></p>
             </div>
-
+            
         </div>
 
+        <hr>
 
         <!-- Footer -->
         <script>
@@ -134,7 +131,7 @@
         
         $("#add2").bind("click",function(){
             var valor=$("#mensaje2").val();
-            $("#parrafo2").html("<textarea id='addcomentario2' class='form-control addcomentariocss2' rows='3'></textarea>");
+            $("#parrafo2").html("<textarea id='addcomentario2' class='form-control addcomentariocss' rows='3'></textarea>");
             $("#addcomentario2").val(valor);
             $("#mensaje2").val("");
             
